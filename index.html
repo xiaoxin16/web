@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>¼ÆÊ±Æ÷</title>
+    <script>
+    window.onload = function(){
+        var HH = 0;
+        var mm = 0;
+        var ss = 0;
+        var str = '';
+        var timer = setInterval(function(){
+            str = "";
+            if(++ss==60)
+            {
+                if(++mm==60)
+                {
+                    HH++;
+                    mm=0;
+                }
+                ss=0;
+            }    
+            str+=HH<10?"0"+HH:HH;
+            str+=":";
+            str+=mm<10?"0"+mm:mm;
+            str+=":";
+            str+=ss<10?"0"+ss:ss;
+            document.getElementById("dtime").innerHTML = str;
+        },1000);
+    };
+    </script>
+</head>
+<body>
+    <div id="dtime">00:00:00</div>
+</body>
+</html>
