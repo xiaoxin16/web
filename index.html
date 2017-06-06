@@ -1,63 +1,27 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset=utf-8>
-    <title>计时器</title>
-    <script>
-    window.onload = function(){
-        var HH = 0;
-        var mm = 0;
-        var ss = 0;
-        var str = '';
-        var timer = setInterval(function(){
-            str = "";
-            if(++ss==60)
-            {
-                if(++mm==60)
-                {
-                    HH++;
-                    mm=0;
-                }
-                ss=0;
-            }    
-            str+=HH<10?"0"+HH:HH;
-            str+=":";
-            str+=mm<10?"0"+mm:mm;
-            str+=":";
-            str+=ss<10?"0"+ss:ss;
-            document.getElementById("dtime").innerHTML = str;
-        },1000);
-    };
-    </script>
-
-	<script>
-    window.onload = function(){
-        var HH = 0;
-        var mm = 0;
-        var ss = 0;
-        var str = '';
-        var timer = setInterval(function(){
-            str = "";
-            if(++ss==60)
-            {
-                if(++mm==60)
-                {
-                    HH++;
-                    mm=0;
-                }
-                ss=0;
-            }    
-            str+=HH<10?"0"+HH:HH;
-            str+=":";
-            str+=mm<10?"0"+mm:mm;
-            str+=":";
-            str+=ss<10?"0"+ss:ss;
-            document.getElementById("dtime").innerHTML = str;
-        },1000);
-    };
-    </script>
+<meta charset=gb2312 />
+<title>时间计算</title>
+<script>
+window.onload = function() 
+{
+    var now = new Date();
+    var reg = /^\s*([1-9]\d{3})\-(\d{1,2})\-(\d{1,2})\s*$/;
+    var _end1 = document.getElementById("end1").innerHTML;
+    if (!reg.test(_end1)) 
+    {
+        throw new Error("Date Format Is Error !");
+        return;
+    }
+    var end1 = new Date(_end1.replace(reg, "$1"), parseInt(_end1.replace(reg, "$2")) - 1, _end1.replace(reg, 
+ 
+"$3"));
+    document.getElementById("end2").innerHTML = Math.round((now - end1)/(1000*60*60*24));
+}
+</script>
 </head>
 <body>
-    <div id="dtime">00:00:00</div>
+    时间计算: <span id="end1">2014-06-05</span> 距2014年06月05日已经过去了<span id="end2">xx</span>天
 </body>
 </html>
