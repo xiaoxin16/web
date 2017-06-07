@@ -6,24 +6,17 @@
 <script>
 window.onload = function() 
 {
-    var now = new Date();
-    var reg = /^\s*([1-9]\d{3})\-(\d{1,2})\-(\d{1,2})\s*$/;
-    var _end1 = "2014-06-05";
-    if (!reg.test(_end1)) 
-    {
-        throw new Error("Date Format Is Error !");
-        return;
-    }
-    var end1 = new Date(_end1.replace(reg, "$1"), parseInt(_end1.replace(reg, "$2")) - 1, _end1.replace(reg, 
- 
-"$3"));
-    document.getElementById("end2").innerHTML = Math.round((now - end1)/(1000*60*60*24));
+	var now = new Date().getTime();
+	var old = Date.parse("06/05/2014");
+	var day = Math.ceil((now - old)/1000/60/60/24);	
+    document.getElementById("end2").innerHTML = day;
 }
 </script>
+
 </head>
 <body>
-	<img src="./img/zjl.jpg" alt="some_text" width="30" height="40">
-	<img src="./img/zjl-record-20170607.png" alt="some_text" width="30" height="40">
+	<img src="./img/zjl.jpg" alt="some_text" width="30" height="40" onclick="this.style.zoom='2'" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>
+	<img src="./img/zjl-record-20170607.png" alt="some_text" width="40" height="40" onclick="this.style.zoom='2'" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>
 	
 	</p>
     距2014年06月05日已经过去了 <font color="red"><span id="end2">xx</span></font> 天
