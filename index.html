@@ -12,7 +12,8 @@ window.onload = function()
 	var now = new Date().getTime();
 	var old = Date.parse("06/05/2014");
 	var day = Math.ceil((now - old)/1000/60/60/24);	
-    document.getElementById("end2").innerHTML = day;
+	document.getElementById("end2").innerHTML = day;
+	document.getElementById("end2").innerHTML = 1314;
 }
 </script>
 
@@ -22,7 +23,7 @@ window.onload = function()
         <img src="./img/zjl.jpg" alt="some_text" width="30" height="40" onclick="this.style.zoom='2'" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>
         <img src="./img/zjl-record-20170607.png" alt="some_text" width="40" height="40" onclick="this.style.zoom='2'" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>
         </p>
-        距2014年06月05日已经过去了 <font color="red"><span id="end2">1314</span></font> 天
+        距2014年06月05日已经过去了 <font color="red"><span id="end2">xx</span></font> 天
     </div>
 </body>
 </html>
