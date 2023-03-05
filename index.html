@@ -13,6 +13,10 @@ window.onload = function()
 	var old = Date.parse("06/05/2014");
 	var day = Math.ceil((now - old)/1000/60/60/24);
 	document.getElementById("end2").innerHTML = day;
+
+	var old = Date.parse("05/01/2023");
+	var day = Math.ceil((old - now)/1000/60/60/24);
+	document.getElementById("end3").innerHTML = day;
 }
 </script>
 
@@ -23,11 +27,14 @@ window.onload = function()
 	<div class="main" id="main">
         <img src="./img/zjl.jpg" alt="some_text" width="30" height="40" onclick="this.style.zoom='2'" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>
         <img src="./img/zjl-record-20170607.png" alt="some_text" width="40" height="40" onclick="this.style.zoom='2'" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>
-	<img src="./img/1213.png" alt="some_text" width="60" height="80" onclick="this.style.zoom='2'" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>
-	<img src="./img/zjl_gongwangfu.jpg" alt="some_text" width="60" height="80" onclick="this.style.zoom='2'" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>
+	    <img src="./img/1213.png" alt="some_text" width="60" height="80" onclick="this.style.zoom='2'" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>
+	    <img src="./img/zjl_gongwangfu.jpg" alt="some_text" width="60" height="80" onclick="this.style.zoom='2'" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>
         </p>
-        距2014年06月05日已经过去了 <font color="red"><span id="end2">xx</span></font> 天
+        距2014年06月05日已经过去了 <font color="red"><span id="end2"><strong>xx</strong></span></font> 天.
     </div>
     <p>2020年1月1日，“既往不咎”</p>
+    <p>
+        距2023年05月01日还有 <font color="green"><span id="end3"><strong>xx</strong></span></font> 天.
+    </p>
 </body>
 </html>
