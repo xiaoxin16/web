@@ -15,7 +15,7 @@ window.onload = function()
 	document.getElementById("end2").innerHTML = day;
 
 	var old = Date.parse("05/01/2023");
-	var day = Math.ceil((old - now)/1000/60/60/24);
+	var day = Math.ceil((now - old)/1000/60/60/24);
 	document.getElementById("end3").innerHTML = day;
 }
 </script>
